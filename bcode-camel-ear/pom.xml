@@ -1,0 +1,118 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.bcode.fwk</groupId>
+	<artifactId>bcode-camel-ear</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>ear</packaging>
+
+	<parent>
+		<groupId>com.zen.jee.fwk</groupId>
+		<artifactId>jee-fwk</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-ear-plugin</artifactId>
+				<configuration>
+					<applicationXml>${project.build.directory}/application.xml</applicationXml>
+					<applicationName>bcode-camel-ear</applicationName>
+					<generateApplicationXml>true</generateApplicationXml>
+					<defaultLibBundleDir>lib</defaultLibBundleDir>
+
+					<modules>
+						<webModule>
+							<groupId>com.bcode.fwk</groupId>
+							<artifactId>bcode-camel-web</artifactId>
+							<bundleFileName>bcode-camel-web.war</bundleFileName>
+							<contextRoot>/bcode-camel</contextRoot>
+						</webModule>
+					</modules>
+				</configuration>
+			</plugin>
+		</plugins>
+		<finalName>bcode-camel-ear</finalName>
+	</build>
+
+	<!-- Define the versions of your ear components here -->
+	<dependencies>
+		<!-- services -->
+		<!-- <dependency> <groupId>com.prios.ws</groupId> <artifactId>prios-ws-TP4-services</artifactId> 
+			<type>ejb</type> <version>1.0-SNAPSHOT</version> </dependency> -->
+
+
+		<!-- Libs -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>2.0-rc1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>2.0-rc1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.0-rc1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-slf4j-impl</artifactId>
+			<version>2.0-rc1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.5</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-ext</artifactId>
+			<version>1.7.5</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>org.apache.openjpa</groupId>
+			<artifactId>openjpa-all</artifactId>
+			<version>2.4.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.derby</groupId>
+			<artifactId>derby</artifactId>
+			<version>10.11.1.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.derby</groupId>
+			<artifactId>derbyclient</artifactId>
+			<version>10.11.1.1</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.bcode.fwk</groupId>
+			<artifactId>bcode-camel-common</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>
+		<!-- WAR -->
+		<dependency>
+			<groupId>com.bcode.fwk</groupId>
+			<artifactId>bcode-camel-web</artifactId>
+			<version>1.0-SNAPSHOT</version>
+			<type>war</type>
+		</dependency>
+		
+		
+	</dependencies>
+</project>

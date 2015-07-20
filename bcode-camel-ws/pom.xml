@@ -1,0 +1,142 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+ 	<groupId>com.bcode.fwk</groupId>
+	<artifactId>bcode-camel-ws</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>ejb</packaging>
+	
+	<parent>
+		<groupId>com.zen.jee.fwk</groupId>
+		<artifactId>jee-fwk</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+	<dependencies>
+        <dependency>
+            <groupId>javax.xml.bind</groupId>
+            <artifactId>jaxb-api</artifactId>
+            <version>2.2.7</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-impl</artifactId>
+            <version>2.2.6</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.xml.bind</groupId>
+            <artifactId>jaxb-xjc</artifactId>
+            <version>2.2.6</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>javax.xml.bind</groupId>
+                    <artifactId>jaxb-api</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.sun.xml.bind</groupId>
+                    <artifactId>jaxb-impl</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+		<dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.glassfish</groupId>
+            <artifactId>javax.ejb</artifactId>
+            <version>3.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+        <dependency>
+            <groupId>com.bcode.fwk</groupId>
+            <artifactId>bcode-camel-services</artifactId>
+            <version>1.0-SNAPSHOT</version>
+			<scope>provided</scope>
+		</dependency>
+	
+     </dependencies>   
+
+    <build>
+        <plugins>
+<!--             <plugin>
+                <groupId>org.jvnet.jax-ws-commons</groupId>
+                <artifactId>jaxws-maven-plugin</artifactId>          				
+                <executions>
+                    <execution>
+                        <id>process-WS2LocalEjb</id>
+                        <phase>compile</phase>
+                        <configuration>
+                            <sei>com.bcode.fwk.services.WebServiceTestImpl</sei>
+							<genWsdl>true</genWsdl>           
+              				<keep>true</keep> 
+                        </configuration>
+                        <goals>
+                            <goal>wsgen</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>process-Resa</id>
+                        <phase>compile</phase>
+                        <configuration>
+                            <sei>com.prios.ws.services.demo.ReservationImpl</sei>
+							<genWsdl>true</genWsdl>           
+              				<keep>true</keep> 
+                        </configuration>
+                        <goals>
+                            <goal>wsgen</goal>
+                        </goals>
+                    </execution>                    
+                </executions>
+            </plugin> -->
+<!--             <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <phase>process-classes</phase>
+                        <configuration>
+                            <target>
+                                <echo>${displayVersion}</echo> -->
+
+                                
+<!--                            <property name="schemaConvention" value="Convention_schema1_v${xsd.version}.xsd"/>
+							    <echo>${schemaConvention}</echo>
+                                <echo>"schemaLocation=&quot;${schemaConvention}&quot;"</echo>
+                                <echo>${project.build.directory}</echo> -->
+<!--                                 <replace file="target/classes/META-INF/wsdl/Convention_schema1.xsd" 
+                                         token="schemaLocation=&quot;http://www.w3.org/2005/05/xmlmime&quot;" 
+                                         value="schemaLocation=&quot;xmlmime.xsd&quot;"/>
+                                <replace file="target/classes/META-INF/wsdl/Convention_schema1.xsd" 
+                                         token="schemaLocation=&quot;http://ws-i.org/profiles/basic/1.1/swaref.xsd&quot;" 
+                                         value="schemaLocation=&quot;swaref.xsd&quot;"/> -->
+<!--                                 <replace file="target/classes/META-INF/wsdl/Convention.wsdl" 
+                                         token="schemaLocation=&quot;Convention_schema1.xsd&quot;" 
+                                         value="schemaLocation=&quot;${schemaConvention}&quot;"/>
+                                <copy  file="target/classes/META-INF/wsdl/Convention_schema1.xsd" tofile="target/classes/META-INF/wsdl/${schemaConvention}" />
+                                <delete file="target/classes/META-INF/wsdl/Convention_schema1.xsd"/> -->
+<!--                             </target>
+                        </configuration>
+                        <goals>
+                            <goal>run</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin> -->
+<!--             <plugin>
+                <artifactId>maven-jar-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>generateWSDLJar</id>
+                        <phase>package</phase>
+                    </execution>
+                </executions>
+            </plugin>  -->           
+        </plugins>
+    </build>
+</project>
